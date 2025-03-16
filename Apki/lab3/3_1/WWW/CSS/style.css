@@ -1,0 +1,38 @@
+body {
+    background: #4ae;
+    color: #000040;
+}
+
+h1, h2, #stopka {
+    background: #0000a0;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* tło kontenera */
+#kontener {
+    background: #ffffff;
+}
+
+/*pozycjonowanie elementów: */
+#menu {
+    background: #ffffff;
+    float: left;
+    width: 20%;
+    padding: 2%;
+}
+
+#tresc {
+    background: #bfe0ff;
+    float: right;
+    width: 70%;
+    padding: 2%;
+}
+
+/* umieszczenie stopki poniżej elementów z float */
+#stopka {
+    clear: both;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}

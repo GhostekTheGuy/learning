@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz dotacji</title>
+</head>
+<body>
+    <h1>Formularz dotacji</h1>
+    
+    <form>
+        <fieldset>
+            <legend>Dane dotacji</legend>
+            <label for="beneficjent">Beneficjent:</label>
+            <input type="text" id="beneficjent" name="beneficjent" list="organizacje" required 
+                   title="Wybierz lub wpisz nazwę organizacji">
+            <datalist id="organizacje">
+                <option value="Wioski Dziecięce SOS">
+                <option value="Caritas">
+                <option value="PAH">
+            </datalist>
+
+            <label for="wartosc">Wartość dotacji:</label>
+            <input type="number" id="wartosc" name="wartosc" min="20" step="1" required
+                   title="Podaj kwotę nie mniejszą niż 20">
+        </fieldset>
+
+        <fieldset>
+            <legend>Dane karty płatniczej</legend>
+            <div>
+                <label>Karta:</label>
+                <input type="radio" id="visa" name="karta" value="visa" required>
+                <label for="visa">Visa</label>
+                <input type="radio" id="mastercard" name="karta" value="mastercard" required>
+                <label for="mastercard">Master Card</label>
+            </div>
+
+            <label for="numer">Numer:</label>
+            <input type="text" id="numer" name="numer" pattern="^\d{13}$|^\d{16}$" required
+                   title="Podaj 13 lub 16 cyfr numeru karty">
+
+            <label for="data">Data ważności:</label>
+            <input type="month" id="data" name="data" required
+                   title="Wybierz miesiąc i rok ważności karty">
+
+            <label for="cvv">Kod CVV:</label>
+            <input type="text" id="cvv" name="cvv" pattern="^\d{3,4}$" required
+                   title="Podaj kod CVV złożony z 3 lub 4 cyfr podanych na odwrocie karty">
+        </fieldset>
+
+        <fieldset>
+            <legend>Dane darczyńcy</legend>
+            <label for="darczynca">Darczyńca:</label>
+            <input type="text" id="darczynca" name="darczynca" pattern=".{3,}" required
+                   title="Podaj imię i nazwisko (minimum 3 znaki)">
+        </fieldset>
+
+        <button type="submit">Rejestruj dotację</button>
+    </form>
+</body>
+</html>

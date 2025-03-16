@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wprowadzenie do jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .klasaZcss {
+            color: red;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mojDiv"></div>
+    <div id="testowy"></div>
+    <script>
+        $(document).ready(function() {
+            $('body').append('<p>Test jQuery!</p>');
+            
+            // Przykład zwięzłego wykorzystania funkcji jQuery
+            var div = $('#mojDiv');
+            div.html('<p>jQuery!</p>');
+            div.addClass('klasaZcss');
+            div.css('display', 'none');
+            div.fadeIn('slow');
+            
+            // Ten sam efekt z wykorzystaniem łańcuchowania metod
+            $('#testowy').html('<p>jQuery z łańcuchowaniem!</p>')
+                .addClass('klasaZcss')
+                .css('display', 'none')
+                .fadeIn('slow');
+        });
+    </script>
+</body>
+</html>

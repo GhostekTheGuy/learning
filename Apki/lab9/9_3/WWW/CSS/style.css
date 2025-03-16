@@ -1,0 +1,150 @@
+/*formatowanie znacznika body:*/
+body {
+    background: white;
+    color: #000040;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1,
+  h2 {
+    margin: 0;
+  }
+  
+  /*formatowanie znaczników h1, h2 i elementu footer:*/
+  h1,
+  h2,
+  footer {
+    background: #1a237e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* tło kontenera */
+  main {
+    background: #ffffff;
+    width: 90%;
+    margin-inline: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  section {
+    width: 75%;
+    padding: 1%;
+    background-color: #bbdefb;
+  }
+  
+  aside {
+    width: 20%;
+    padding: 1%;
+  }
+  
+  /* Flexbox dla układu kolumnowego */
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  header, nav, footer {
+    width: 100%;
+  }
+  
+  
+  
+  section, aside {
+    margin-top: 10px;
+  }
+  
+  /* Media query dla układu jednokolumnowego */
+  @media (max-width: 720px) {
+    section, aside {
+      width: 100%;
+    }
+  }
+  
+  footer {
+    clear: both;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  *.box {
+    background: #303f9f;
+    color: #e3f2fd;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* hiperłącza w elementach klasy box*/
+  *.box a {
+    color: #ffffb0;
+    transition: color 0.3s ease;
+  }
+  
+  *.box a:hover {
+    color: white;
+  }
+  
+  /* Nawigacja z flexbox */
+  nav {
+    background-color: #e3f2fd;
+    padding: 5px;
+  }
+  
+  ul#nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul#nav li {
+    border: 1px solid #d5d5d5;
+    list-style-type: none;
+    background: #90caf9;
+    margin-left: 3px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ul#nav li:hover {
+    border: 1px solid #d5d5d5;
+    background: #f0f0f0;
+  }
+  
+  ul#nav li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #1a237e;
+  }
+  
+  ul#nav li li a {
+    width: 160px;
+  }
+  
+  ul#nav li li:hover {
+    background: white;
+  }
+  
+  ul#nav li ul {
+    display: none;
+    padding: 0;
+  }
+  
+  ul#nav li:hover ul {
+    position: absolute;
+    background: #bbdefb;
+    display: block;
+    width: 177px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreator pizzy</title>
+</head>
+<body>
+    <h1>Kreator pizzy</h1>
+    
+    <form method="post" action="mailto:example@example.com">
+        <fieldset>
+            <legend>Rozmiar:</legend>
+            <input type="radio" name="rozmiar" id="mala" value="mala">
+            <label for="mala">Mała</label>
+            <input type="radio" name="rozmiar" id="srednia" value="srednia" checked>
+            <label for="srednia">Średnia</label>
+            <input type="radio" name="rozmiar" id="duza" value="duza">
+            <label for="duza">Duża</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodatki:</legend>
+            <input type="checkbox" name="dodatki" id="szynka" value="szynka">
+            <label for="szynka">Szynka</label><br>
+            <input type="checkbox" name="dodatki" id="salami" value="salami" checked>
+            <label for="salami">Salami</label><br>
+            <input type="checkbox" name="dodatki" id="boczek" value="boczek">
+            <label for="boczek">Boczek</label><br>
+            <input type="checkbox" name="dodatki" id="papryka" value="papryka" checked>
+            <label for="papryka">Papryka</label><br>
+            <input type="checkbox" name="dodatki" id="pomidor" value="pomidor" checked>
+            <label for="pomidor">Pomidor</label><br>
+            <input type="checkbox" name="dodatki" id="ser" value="ser">
+            <label for="ser">Ser</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sosy:</legend>
+            <label for="sos">Wybierz sos:</label>
+            <select name="sosy" id="sos" multiple size="4">
+                <option value="pomidorowy">Pomidorowy</option>
+                <option value="czosnkowy">Czosnkowy</option>
+                <option value="ketchup-lagodny">Ketchup łagodny</option>
+                <option value="ketchup-pikantny">Ketchup pikantny</option>
+            </select>
+            <br><br>
+            <label for="uwagi">Inne uwagi:</label><br>
+            <textarea id="uwagi" name="uwagi" rows="5" cols="70"></textarea>
+        </fieldset>
+
+        <br>
+        <input type="reset" value="Wyczyść dane">
+        <input type="submit" value="Wyślij zamówienie">
+    </form>
+</body>
+</html> 

@@ -1,0 +1,96 @@
+body {
+    background: #4ae;
+    color: #000040;
+}
+
+h1, h2, #stopka {
+    background: #0000a0;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* tło kontenera */
+#kontener {
+    background: #ffffff;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*Nowa nawigacja*/
+#nav {
+ text-align: left;
+ overflow: hidden;
+ font-family: calibri, tahoma;
+}
+ul#nav li {
+ border: 1px solid #d5d5d5;
+ list-style-type: none;
+ float: left;
+ background: #98bed8;
+ margin-left: 3px;
+}
+ul#nav li:hover {
+ border: 1px solid #d5d5d5;
+ list-style-type: none;
+ float: left;
+ background: #f0f0f0;
+ margin-left: 3px;
+}
+ul#nav li a {
+ display : block;
+ padding : 4pt;
+ text-decoration : none;
+}
+ul#nav li li a {
+ width: 160px;
+}
+ul#nav li li:hover {
+ background: white;
+}
+ul#nav li ul {
+ overflow: hidden;
+ display: none;
+}
+ul#nav li:hover ul {
+ position: absolute;
+ background: #aaa;
+ padding: 0;
+ display: block;
+ width: 177px;
+}
+
+/*Pozycjonowanie elementów na stronie */
+#tresc {
+    float: left;
+    width: 75%;
+    padding: 1%;
+    background: #bfe0ff;
+}
+
+#pasek {
+    float: right;
+    width: 20%;
+    padding: 1%;
+}
+
+/* umieszczenie stopki poniżej elementów z float */
+#stopka {
+    clear: both;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+
+/* formatowanie dla elementu klasy box */
+*.box { 
+    background: #0000a0;
+    color: #dbffff;
+    padding: 5px;
+    margin: 5px;
+    font-size: 90%;
+}
+
+/* hiperłącza w elementach klasy box*/
+*.box a {
+    color: #ffffb0;
+}

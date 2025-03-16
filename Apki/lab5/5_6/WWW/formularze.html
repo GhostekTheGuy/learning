@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/formularze.css" type="text/css" />
+    <title>Budowa formularzy HTML</title>
+</head>
+<body>
+    <main id="kontener">
+        <header>
+            <h2>Szybki kurs HTML</h2>
+        </header>
+        <nav>
+            <ul id="nav">
+                <li><a href="index.html">Podstawy</a></li>
+                <li><a href="tabele.html">Tabele</a></li>
+                <li><a href="">Formularze</a>
+                    <ul>
+                        <li><a href="formularze.html">Pola formularza</a></li>
+                        <li><a href="obliczenia.html">Obliczenia w formularzu</a></li>
+                    </ul>
+                </li>
+                <li><a href="galeria.html" title="">Galeria</a></li>
+            </ul>
+        </nav>
+        <section id="tresc">
+            <h3>Podstawowe znaczniki formularza HTML to:</h3>
+            <ul>
+                <li>&lt;form&gt; - znacznik podstawowy zawierający pola formularza</li>
+                <li>&lt;input&gt; - znacznik umożliwia wstawienie różnych pól (pole tekstowe, przycisk typu radio, przycisk typu checkbox) w zależności od wartości jego atrybutu type</li>
+                <li>&lt;select&gt; - pole formularza typu lista rozwijana</li>
+                <li>&lt;textarea&gt; - pole formularza typu obszar tekstowy</li>
+                <li>&lt;button&gt; - pole formularza typu przycisk</li>
+            </ul>
+
+            <h3>Przykładowy formularz HTML:</h3>
+            
+            <form id="zamowienie" novalidate>
+                <table>
+                    <tr>
+                        <td><label for="nazwisko">Nazwisko:</label></td>
+                        <td><input type="text" id="nazwisko" name="nazwisko" required 
+                            pattern="[A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż]{2,30}" 
+                            placeholder="Wprowadź nazwisko" 
+                            title="Nazwisko powinno zawierać tylko litery"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wiek">Wiek:</label></td>
+                        <td><input type="number" id="wiek" name="wiek" min="18" max="120" 
+                            required placeholder="Podaj swój wiek" 
+                            title="Wiek musi być liczbą między 18 a 120"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="panstwo">Państwo:</label></td>
+                        <td>
+                            <select id="panstwo" name="panstwo" required>
+                                <option value="">-- Wybierz kraj --</option>
+                                <option value="PL" selected>Polska</option>
+                                <option value="DE">Niemcy</option>
+                                <option value="UK">Wielka Brytania</option>
+                                <option value="FR">Francja</option>
+                                <option value="US">Stany Zjednoczone</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Adres e-mail:</label></td>
+                        <td><input type="email" id="email" name="email" required 
+                            placeholder="twoj@email.com" 
+                            title="Wprowadź poprawny adres email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="telefon">Telefon:</label></td>
+                        <td><input type="tel" id="telefon" name="telefon" 
+                            pattern="[0-9]{9}" placeholder="123456789" 
+                            title="Numer telefonu powinien składać się z 9 cyfr"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="data">Data dostawy:</label></td>
+                        <td><input type="date" id="data" name="data" 
+                            min="2023-01-01" required></td>
+                    </tr>
+                </table>
+                
+                <h4>Zamawiam tutorial z języka:</h4>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="php" name="jezyk" value="php">
+                    <label for="php">PHP</label>
+                    
+                    <input type="checkbox" id="cpp" name="jezyk" value="cpp">
+                    <label for="cpp">C/C++</label>
+                    
+                    <input type="checkbox" id="java" name="jezyk" value="java">
+                    <label for="java">Java</label>
+                    
+                    <input type="checkbox" id="python" name="jezyk" value="python">
+                    <label for="python">Python</label>
+                </div>
+                
+                <h4>Sposób zapłaty:</h4>
+                <div class="radio-group">
+                    <input type="radio" name="payment" id="eurocard" value="eurocard" required>
+                    <label for="eurocard">eurocard</label>
+                    
+                    <input type="radio" name="payment" id="visa" value="visa">
+                    <label for="visa">visa</label>
+                    
+                    <input type="radio" name="payment" id="przelew" value="przelew">
+                    <label for="przelew">przelew bankowy</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="uwagi">Dodatkowe uwagi:</label>
+                    <textarea id="uwagi" name="uwagi" rows="4" 
+                        placeholder="Wpisz dodatkowe informacje dotyczące zamówienia"
+                        maxlength="200"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="regulamin" name="regulamin" required>
+                    <label for="regulamin">Akceptuję regulamin</label>
+                </div>
+                
+                <div class="form-buttons">
+                    <input type="submit" value="Wyślij">
+                    <input type="reset" value="Anuluj">
+                </div>
+            </form>
+        </section>
+        <footer>&copy;BP</footer>
+    </main>
+</body>
+</html> 

@@ -1,0 +1,147 @@
+body {
+    background: #4ae;
+    color: #000040;
+    margin: 0;
+    padding: 0;
+}
+
+/* tło kontenera */
+#kontener {
+    background: #ffffff;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, #stopka {
+    background: #0000a0;
+    color: #ffffff;
+    text-align: center;
+}
+
+/*Nowa nawigacja*/
+#nav {
+ text-align: left;
+ overflow: hidden;
+ font-family: calibri, tahoma;
+}
+ul#nav li {
+ border: 1px solid #d5d5d5;
+ list-style-type: none;
+ float: left;
+ background: #98bed8;
+ margin-left: 3px;
+}
+ul#nav li:hover {
+ border: 1px solid #d5d5d5;
+ list-style-type: none;
+ float: left;
+ background: #f0f0f0;
+ margin-left: 3px;
+}
+ul#nav li a {
+ display : block;
+ padding : 4pt;
+ text-decoration : none;
+}
+ul#nav li li a {
+ width: 160px;
+}
+ul#nav li li:hover {
+ background: white;
+}
+ul#nav li ul {
+ overflow: hidden;
+ display: none;
+}
+ul#nav li:hover ul {
+ position: absolute;
+ background: #aaa;
+ padding: 0;
+ display: block;
+ width: 177px;
+}
+
+#tresc {
+    float: right;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #bfe0ff;
+}
+
+/* umieszczenie stopki poniżej elementów z float */
+#stopka {
+    clear: both;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    background: #0000a0;
+    color: #ffffff;
+}
+
+table {
+    background-color: lightyellow;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    border: 1pt solid navy;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+thead, tfoot {
+    background-color: navy;
+    color: white;
+    font-size: 110%;
+    padding: 5pt;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+td, th {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+tr {
+    background-color: lightyellow;
+}
+
+tfoot, tfoot td {
+    background-color: navy;
+    color: white;
+}
+
+tfoot a {
+    color: #ffffff;
+}
+
+th {
+    background-color: navy;
+    color: white;
+}
+
+thead {
+    background-color: #4a4a9c;
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f0f8ff;
+}
+
+tfoot {
+    background-color: #e6e6fa;
+}
+
+#baner, #menu, #stopka {
+    width: 100%;
+}

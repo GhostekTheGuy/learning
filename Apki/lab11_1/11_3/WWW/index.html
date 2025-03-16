@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koszyk produktów</title>
+    <link rel="stylesheet" href="CSS/syles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Koszyk produktów</h1>
+        
+        <form id="productForm">
+            <div class="form-group">
+                <label for="nazwa">Nazwa produktu:</label>
+                <input type="text" id="nazwa" name="nazwa" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="cena">Cena:</label>
+                <input type="number" id="cena" name="cena" step="0.01" min="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="kolor">Kolor:</label>
+                <input type="text" id="kolor" name="kolor" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="liczba">Liczba sztuk:</label>
+                <input type="number" id="liczba" name="liczba" min="1" required>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" id="saveBtn">Zapisz produkt do koszyka</button>
+                <button type="button" id="showBtn">Wyświetl koszyk</button>
+                <button type="button" id="deleteBtn">Usuń wszystkie produkty</button>
+            </div>
+        </form>
+        
+        <div id="cartContainer">
+            <h2>Zawartość koszyka</h2>
+            <div id="cartContent"></div>
+        </div>
+    </div>
+    
+    <script src="JS/funkcje.js"></script>
+</body>
+</html>

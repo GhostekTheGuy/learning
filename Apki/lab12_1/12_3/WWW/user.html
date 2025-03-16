@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularz rejestracji</title>
+  <script>
+    class Organizer{
+      static users = [];
+      
+      constructor(email="", login="user", pass="user") {
+        this.login=login;
+        this.pass=pass;
+        this.email=email;
+      }
+      
+      pokaz(){
+        //uzupełnij dane o loginie i emailu:
+        return "Dane użytkownika: login:" + this.login + ", email:" + this.email;
+      }
+      
+      formularzRejestracji(){
+        var formularz = "";
+        formularz += '<div>';
+        formularz += 'Email: <input type="text" id="email"><br>';
+        formularz += 'Login: <input type="text" id="login"><br>';
+        formularz += 'Hasło: <input type="password" id="pass"><br>';
+        formularz += '<button id="rejestruj">Zarejestruj</button>';
+        formularz += '</div>';
+        return formularz;
+      }
+      
+      static wczytajUzytkownikow() {
+        // Wczytanie wszystkich użytkowników z localStorage
+        Organizer.users = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const klucz = localStorage.key(i);
+          try {
+            const zapisanyUser = JSON.parse(localStorage.getItem(klucz));
+            if (zapisanyUser && zapisanyUser.login) {
+              Organizer.users.push(zapisanyUser);
+            }
+          } catch (e) {
+            console.error("Błąd podczas parsowania danych:", e);
+          }
+        }
+      }
+      
+      static czyLoginIstnieje(login) {
+        return localStorage.getItem(login) !== null;
+      }
+      
+      static czyEmailIstnieje(email) {
+        return Organizer.users.some(user => user.email === email);
+      }
+      
+      zapisz() {
+        // Sprawdzenie czy użytkownik o podanym loginie już istnieje
+        const istniejacyUserLogin = Organizer.czyLoginIstnieje(this.login);
+        
+        // Sprawdzenie czy istnieje użytkownik o podanym emailu
+        const istniejacyUserEmail = Organizer.czyEmailIstnieje(this.email);
+        
+        // Zapis tylko jeśli nie istnieje użytkownik o takim samym loginie lub emailu
+        if (!istniejacyUserLogin && !istniejacyUserEmail) {
+          localStorage.setItem(this.login, JSON.stringify(this));
+          document.getElementById('info').innerHTML = "Użytkownik został pomyślnie zarejestrowany.";
+          console.log("Zapisano użytkownika:", this);
+          return true;
+        } else {
+          if (istniejacyUserLogin) {
+            document.getElementById('info').innerHTML = "Istnieje już użytkownik o podanym loginie.";
+          } else {
+            document.getElementById('info').innerHTML = "Istnieje już użytkownik o podanym adresie email.";
+          }
+          return false;
+        }
+      }
+    }
+    
+    //skrypt główny – instrukcje są wykonywane dopiero po załadowaniu DOM:
+    document.addEventListener('DOMContentLoaded', () => {
+      // Wczytanie istniejących użytkowników
+      Organizer.wczytajUzytkownikow();
+      
+      var user = new Organizer();
+      //pokaż dane o użytkowniku na konsoli
+      console.log(user.pokaz());
+      
+      // wyświetl formularz rejestracji
+      document.getElementById('formularz').innerHTML = user.formularzRejestracji();
+      
+      // obsługa akcji kliknięcia na przycisk z id='rejestruj'
+      document.getElementById('rejestruj').addEventListener("click", () => {
+        // Utworzenie nowego obiektu użytkownika z danymi z formularza
+        user = new Organizer(
+          document.getElementById('email').value,
+          document.getElementById('login').value,
+          document.getElementById('pass').value
+        );
+        
+        // Zapisanie użytkownika
+        if (user.zapisz()) {
+          // Aktualizacja listy użytkowników po pomyślnym zapisie
+          Organizer.wczytajUzytkownikow();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <h2>Rejestracja nowego użytkownika w localStorage</h2>
+    <!-- Przygotowanie elementów do wyświetlania formularza rejestracji
+    i danych i komunikatów informacyjnych -->
+    <div id='formularz'></div>
+    <div id='info'></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+body {
+    background: #4ae;
+    color: #000040;
+}
+
+h1, h2, #stopka {
+    background: #0000a0;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* tło kontenera */
+#kontener {
+    background: #ffffff;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*Nawigacja: */
+#menu {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    border-bottom: 2px solid #0000a0;
+}
+
+#menu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 3px;
+    font-family: "Lucida Grande", sans-serif;
+    font-size: 85%;
+}
+
+#menu a {
+    float: left;
+    display: block;
+    margin: 0;
+    padding: 4px 8px;
+    color: #ffffd7;
+    text-decoration: none;
+    border: 1px solid #0000c6;
+    border-bottom: none;
+    background: #0000a0;
+}
+
+#menu a:hover {
+    background: #0000d5;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*Pozycjonowanie elementów na stronie */
+#tresc {
+    float: left;
+    width: 75%;
+    padding: 1%;
+    background: #bfe0ff;
+}
+
+#pasek {
+    float: right;
+    width: 20%;
+    padding: 1%;
+}
+
+/* umieszczenie stopki poniżej elementów z float */
+#stopka {
+    clear: both;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+
+/* formatowanie dla elementu klasy box */
+*.box { 
+    background: #0000a0;
+    color: #dbffff;
+    padding: 5px;
+    margin: 5px;
+    font-size: 90%;
+}
+
+/* hiperłącza w elementach klasy box*/
+*.box a {
+    color: #ffffb0;
+}

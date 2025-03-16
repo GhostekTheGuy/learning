@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formularz rejestracji</title>
+  <script>
+    //definicja klasy User
+    class User{
+      constructor(email="", login="user", pass="user") {
+        this.login=login;
+        this.pass=pass;
+        this.email=email;
+      }
+      
+      pokaz(){
+        //uzupełnij dane o loginie i emailu:
+        return "Dane użytkownika: login:" + this.login + ", email:" + this.email;
+      }
+      
+      formularzRejestracji(){
+        var formularz = "";
+        formularz += '<div>';
+        formularz += 'Email: <input type="text" id="email"><br>';
+        formularz += 'Login: <input type="text" id="login"><br>';
+        formularz += 'Hasło: <input type="password" id="pass"><br>';
+        formularz += '<button id="rejestruj">Zarejestruj</button>';
+        formularz += '</div>';
+        return formularz;
+      }
+    }
+    
+    //skrypt główny – instrukcje są wykonywane dopiero po załadowaniu DOM:
+    document.addEventListener('DOMContentLoaded', () => {
+      var user = new User();
+      //pokaż dane o użytkowniku na konsoli
+      console.log(user.pokaz());
+      
+      // wyświetl formularz rejestracji
+      document.getElementById('formularz').innerHTML = user.formularzRejestracji();
+      
+      // obsługa akcji kliknięcia na przycisk z id='rejestruj'
+      document.getElementById('rejestruj').addEventListener("click", () => {
+        user.login = document.getElementById('login').value;
+        //zbierz resztę danych z pól formularza
+        user.email = document.getElementById('email').value;
+        user.pass = document.getElementById('pass').value;
+        
+        // Sprawdzenie czy użytkownik o podanym loginie już istnieje
+        const istniejacyUserLogin = localStorage.getItem(user.login);
+        
+        // Sprawdzenie czy istnieje użytkownik o podanym emailu
+        let istniejacyUserEmail = false;
+        for (let i = 0; i < localStorage.length; i++) {
+          const klucz = localStorage.key(i);
+          const zapisanyUser = JSON.parse(localStorage.getItem(klucz));
+          if (zapisanyUser && zapisanyUser.email === user.email) {
+            istniejacyUserEmail = true;
+            break;
+          }
+        }
+        
+        // Zapis tylko jeśli nie istnieje użytkownik o takim samym loginie lub emailu
+        if (!istniejacyUserLogin && !istniejacyUserEmail) {
+          localStorage.setItem(user.login, JSON.stringify(user));
+          document.getElementById('info').innerHTML = "Użytkownik został pomyślnie zarejestrowany.";
+          console.log("Zapisano użytkownika:", user);
+        } else {
+          if (istniejacyUserLogin) {
+            document.getElementById('info').innerHTML = "Istnieje już użytkownik o podanym loginie.";
+          } else {
+            document.getElementById('info').innerHTML = "Istnieje już użytkownik o podanym adresie email.";
+          }
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <h2>Rejestracja nowego użytkownika w localStorage</h2>
+    <!-- Przygotowanie elementów do wyświetlania formularza rejestracji
+    i danych i komunikatów informacyjnych -->
+    <div id='formularz'></div>
+    <div id='info'></div>
+  </div>
+</body>
+</html>

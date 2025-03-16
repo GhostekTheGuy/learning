@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/formularze.css" type="text/css" />
+    <title>Budowa formularzy HTML</title>
+</head>
+<body>
+    <div id="kontener">
+        <div id="baner">
+            <h2>Szybki kurs HTML</h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Podstawowe znaczniki</a></li>
+                <li><a href="tabele.html">Tworzenie tabel</a></li>
+                <li><a href="formularze.html">Budowa formularzy</a></li>
+            </ul>
+        </div>
+        <div id="tresc">
+            <h3>Podstawowe znaczniki formularza HTML to:</h3>
+            <ul>
+                <li>&lt;form&gt; - znacznik podstawowy zawierający pola formularza</li>
+                <li>&lt;input&gt; - znacznik umożliwia wstawienie różnych pól (pole tekstowe, przycisk typu radio, przycisk typu checkbox) w zależności od wartości jego atrybutu type</li>
+                <li>&lt;select&gt; - pole formularza typu lista rozwijana</li>
+                <li>&lt;textarea&gt; - pole formularza typu obszar tekstowy</li>
+                <li>&lt;button&gt; - pole formularza typu przycisk</li>
+            </ul>
+
+            <h3>Przykładowy formularz HTML:</h3>
+            
+            <form>
+                <table>
+                    <tr>
+                        <td>Nazwisko:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Wiek:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Państwo:</td>
+                        <td><select><option selected>Polska</option></select></td>
+                    </tr>
+                    <tr>
+                        <td>Adres e-mail:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                </table>
+                
+                <h4>Zamawiam tutorial z języka:</h4>
+                <input type="checkbox" id="php">PHP
+                <input type="checkbox" id="cpp">C/C++
+                <input type="checkbox" id="java">Java<br><br>
+                
+                Sposób zapłaty:<br>
+                <input type="radio" name="payment" id="eurocard">eurocard
+                <input type="radio" name="payment" id="visa">visa
+                <input type="radio" name="payment" id="przelew">przelew bankowy<br><br>
+                
+                <input type="submit" value="Wyślij">
+                <input type="reset" value="Anuluj">
+            </form>
+        </div>
+        <div id="stopka">&copy;BP</div>
+    </div>
+</body>
+</html> 

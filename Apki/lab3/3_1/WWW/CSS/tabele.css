@@ -1,0 +1,86 @@
+body {
+    background: #4ae;
+}
+
+/* tło kontenera */
+#kontener {
+    background: #ffffff;
+}
+
+h1, h2, #stopka {
+    background: #0000a0;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+/*pozycjonowanie elementów: */
+#menu {
+    float: left;
+    width: 20%;
+    padding: 2%;
+    background: #ffffff;
+}
+
+#tresc {
+    float: right;
+    width: 70%;
+    padding: 2%;
+}
+
+/* umieszczenie stopki poniżej elementów z float */
+#stopka {
+    clear: both;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    background: #000040;
+    color: #8080ff;
+}
+
+table {
+    background-color: lightyellow;
+    text-align: center;
+    width: 94%;
+    margin: 2%;
+    border: 1pt solid navy;
+}
+
+caption {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+thead, tfoot {
+    background-color: navy;
+    color: white;
+    font-size: 110%;
+    padding: 5pt;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+td, th {
+    border: 1pt solid navy;
+    padding: 5px;
+}
+
+tr {
+    background-color: lightyellow;
+}
+
+tfoot, tfoot td {
+    background-color: navy;
+    color: white;
+}
+
+tfoot a {
+    color: #ffffff;
+}
+
+th {
+    background-color: navy;
+    color: white;
+}

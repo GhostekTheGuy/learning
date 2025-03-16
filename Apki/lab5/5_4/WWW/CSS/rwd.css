@@ -1,0 +1,285 @@
+/* Podstawowe style dla wszystkich urządzeń */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #35424a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    background-color: #35424a;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #e8491d;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #35424a;
+}
+
+aside {
+    background-color: #e8491d;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+aside a {
+    color: white;
+}
+
+footer {
+    background-color: #35424a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Media query dla urządzeń mobilnych */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin-bottom: 5px;
+    }
+}
+
+/* Media query dla orientacji poziomej (landscape) */
+@media screen and (orientation: landscape) {
+    #container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            "header header"
+            "nav nav"
+            "main aside"
+            "footer footer";
+        gap: 20px;
+    }
+    
+    header {
+        grid-area: header;
+        margin-bottom: 0;
+    }
+    
+    nav {
+        grid-area: nav;
+    }
+    
+    nav ul {
+        margin-bottom: 0;
+    }
+    
+    main {
+        grid-area: main;
+        margin-bottom: 0;
+    }
+    
+    aside {
+        grid-area: aside;
+        margin-bottom: 0;
+    }
+    
+    footer {
+        grid-area: footer;
+    }
+}
+
+/* Media query dla orientacji pionowej (portrait) */
+@media screen and (orientation: portrait) {
+    #container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    header, nav, main, aside, footer {
+        width: 100%;
+    }
+    
+    aside {
+        background-color: #35424a;
+        border-top: 3px solid #e8491d;
+    }
+    
+    main section {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    nav ul li a {
+        text-align: center;
+    }
+}
+
+body { 
+  background: #d4c7b9; 
+}
+
+h1, h2, footer { 
+  padding: 0.2em; 
+  text-align: center; 
+}
+
+.srodek { 
+  text-align: center;
+}
+
+nav { 
+  float: left; 
+  width: 100%; 
+}
+
+nav, footer {
+  background: #45525a; 
+  color: #ffe9ba; 
+  border-radius: 10px;
+}
+
+nav a {
+  float: left;
+  display: block;
+  width: 23%;
+  padding: 1%;
+  font-size: 110%;
+  color: #ffe9ba;
+  text-align: center;
+  text-decoration: none;
+}
+
+section { 
+  clear: both;
+  margin-bottom: 20px;
+}
+
+img { 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 10px; 
+}
+
+.galeria { 
+  margin: auto; 
+  width: 90%;
+  text-align: center;
+}
+
+.slajd {
+  display: inline-block;
+  width: 120px;
+  height: 80px;
+  text-align: center;
+  border-radius: 10px;
+  background: #ffe9ba;
+  padding: 5px;
+  margin: 5px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.slajd img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.slajd:hover { 
+  background: #45525a; 
+}
+
+.srodek img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 720px) {
+nav a { 
+  width: 48%;
+  padding: 10px 0;
+  font-size: 140%;
+}
+.slajd {
+  width: 45%; 
+}
+}
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+body { 
+  font-size: 13px; 
+}
+h1 { 
+  font-size: 23px; 
+}
+h2 { 
+  font-size: 18px; 
+}
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 11px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  nav a {
+    width: 98%;
+    padding: 8px 0;
+    font-size: 130%;
+  }
+  .slajd {
+    width: 90%;
+    margin: 5px auto;
+  }
+  .galeria {
+    width: 100%;
+  }
+}
