@@ -31,32 +31,32 @@
             <form>
                 <table>
                     <tr>
-                        <td>Nazwisko:</td>
-                        <td><input type="text"></td>
+                        <td><label for="nazwisko">Nazwisko:</label></td>
+                        <td><input type="text" id="nazwisko" name="nazwisko"></td>
                     </tr>
                     <tr>
-                        <td>Wiek:</td>
-                        <td><input type="text"></td>
+                        <td><label for="wiek">Wiek:</label></td>
+                        <td><input type="text" id="wiek" name="wiek"></td>
                     </tr>
                     <tr>
-                        <td>Państwo:</td>
-                        <td><select><option selected>Polska</option></select></td>
+                        <td><label for="panstwo">Państwo:</label></td>
+                        <td><select id="panstwo" name="panstwo"><option selected>Polska</option></select></td>
                     </tr>
                     <tr>
-                        <td>Adres e-mail:</td>
-                        <td><input type="text"></td>
+                        <td><label for="email">Adres e-mail:</label></td>
+                        <td><input type="text" id="email" name="email"></td>
                     </tr>
                 </table>
                 
                 <h4>Zamawiam tutorial z języka:</h4>
-                <input type="checkbox" id="php">PHP
-                <input type="checkbox" id="cpp">C/C++
-                <input type="checkbox" id="java">Java<br><br>
+                <label for="php"><input type="checkbox" id="php" name="jezyk[]" value="php">PHP</label>
+                <label for="cpp"><input type="checkbox" id="cpp" name="jezyk[]" value="cpp">C/C++</label>
+                <label for="java"><input type="checkbox" id="java" name="jezyk[]" value="java">Java</label><br><br>
                 
                 Sposób zapłaty:<br>
-                <input type="radio" name="payment" id="eurocard">eurocard
-                <input type="radio" name="payment" id="visa">visa
-                <input type="radio" name="payment" id="przelew">przelew bankowy<br><br>
+                <label for="eurocard"><input type="radio" name="payment" id="eurocard" value="eurocard">eurocard</label>
+                <label for="visa"><input type="radio" name="payment" id="visa" value="visa">visa</label>
+                <label for="przelew"><input type="radio" name="payment" id="przelew" value="przelew">przelew bankowy</label><br><br>
                 
                 <input type="submit" value="Wyślij">
                 <input type="reset" value="Anuluj">
